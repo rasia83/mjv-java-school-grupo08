@@ -1,14 +1,17 @@
-public class ContaCorrente {
+import java.util.Date;
+import java.util.Random;
 
-    // TODO
-    // Número da agência
-    private String  dataNascimento;
+public class ContaCorrente {
+    private Date dataNascimento;
     private String nomeCliente;
     private double saldoConta;
+    private int numeroConta = new Random().nextInt(1000);
 
-    private int numeroConta;
-    
-    // Transferir um valor para outra conta
+    public ContaCorrente(String nomeCliente, Date dataNascimento){
+        this.nomeCliente = nomeCliente;
+        this.dataNascimento = dataNascimento;
+    }
+
     // Consultar o extrato entre duas datas
 
     public double sacarValor(double valor) {
@@ -19,22 +22,21 @@ public class ContaCorrente {
         return saldoConta;
     }
 
+    public void depositar(double dinheiro) {
+        this.saldoConta += dinheiro;
+    }
+
     public int getNumeroConta() {
         return this.numeroConta;
     }
 
-    public void cancelarConta(String justificativa) {
-
-    }
-
-    public void transferir(String numeroContaDestino, double valorDeTransferencia){
-
-        //verifica se o cliente tem saldo suficiente na conta para transferir
+    public void transferir(ContaCorrente contaDestino, double valorDeTransferencia){
         if(saldoConta < valorDeTransferencia) {
             System.out.println("Saldo insuficiente!!");
         } else {
-            saldoConta -= valorDeTransferencia;
-            System.out.println("Transferencia para a conta:" + numeroContaDestino + " realizada com sucesso");
+            this.saldoConta -= valorDeTransferencia;
+            contaDestino.saldoConta += valorDeTransferencia;
+            System.out.println("Transferencia para a conta:" + contaDestino.getNumeroConta() + " realizada com sucesso");
             System.out.println("Saldo atual:" + saldoConta);
         }
     }
