@@ -1,5 +1,3 @@
-
-
 public class ContaCorrente {
 
   // TODO
@@ -7,12 +5,14 @@ public class ContaCorrente {
   // Número da agência
   // Nome do cliente
   // Data de nascimento
-  // Saldo da conta
+  private double saldoConta;
   
   // Sacar um valor
   // Transferir um valor para outra conta 
   // Cancelar a conta com uma justificativa
   // Consultar o extrato entre duas datas
-  // Consultar o saldo atual
+  public double consultarSaldoAtual(){
+    return saldoConta;
+  }
   
 }

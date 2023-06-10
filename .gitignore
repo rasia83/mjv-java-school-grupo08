@@ -1,6 +1,10 @@
 # Compiled class file
 *.class
 
+.idea/
+
+mjv-java-school-grupo08.iml
+
 # Log file
 *.log
 
