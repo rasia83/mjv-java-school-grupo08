@@ -5,6 +5,8 @@
 
 mjv-java-school-grupo08.iml
 
+out/
+
 # Log file
 *.log
 
