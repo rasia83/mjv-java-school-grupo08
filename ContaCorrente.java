@@ -14,5 +14,15 @@ public class ContaCorrente {
   // Cancelar a conta com uma justificativa
   // Consultar o extrato entre duas datas
   // Consultar o saldo atual
+
+    private int numeroConta;
+
+    public int getNumeroConta(){
+        return this.numeroConta;
+    }
+
+    public void cancelarConta(String justificativa){
+
+    }
   
 }
