@@ -2,7 +2,7 @@ public class ContaCorrente {
 
     // TODO
     // Número da agência
-    // Data de nascimento
+    private String  dataNascimento;
     private String nomeCliente;
     private double saldoConta;
 
@@ -27,5 +27,16 @@ public class ContaCorrente {
 
     }
 
+    public void transferir(String numeroContaDestino, double valorDeTransferencia){
+
+        //verifica se o cliente tem saldo suficiente na conta para transferir
+        if(saldoConta < valorDeTransferencia) {
+            System.out.println("Saldo insuficiente!!");
+        } else {
+            saldoConta -= valorDeTransferencia;
+            System.out.println("Transferencia para a conta:" + numeroContaDestino + " realizada com sucesso");
+            System.out.println("Saldo atual:" + saldoConta);
+        }
+    }
 
 }
