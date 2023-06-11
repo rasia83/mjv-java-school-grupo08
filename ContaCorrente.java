@@ -1,5 +1,6 @@
 import java.time.LocalDate;
-import java.util.*;
+import java.util.Random;
+import java.util.ArrayList;
 
 public class ContaCorrente {
     private LocalDate dataNascimento;
@@ -55,7 +56,7 @@ public class ContaCorrente {
             System.out.println("Saldo atual:" + saldoConta);
         }
     }
-
+    
     public void consultarExtrato(LocalDate dataInicial, LocalDate dataFinal) {
         System.out.println("--------------- Extrato da conta ---------------");
         System.out.println("numero da conta " + numeroConta);
