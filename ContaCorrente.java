@@ -1,4 +1,3 @@
-
 public class ContaCorrente {
 
 import java.util.Date;
@@ -16,11 +15,6 @@ public class ContaCorrente {
         this.nomeCliente = nomeCliente;
         this.dataNascimento = dataNascimento;
     }
-
-    public ContaCorrente() {
-
-    }
-
 
     public double sacarValor(double valor) {
         return saldoConta -= valor;
