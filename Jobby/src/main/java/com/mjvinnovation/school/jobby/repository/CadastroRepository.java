@@ -4,6 +4,7 @@ import com.mjvinnovation.school.jobby.model.Cadastro;
 import com.mjvinnovation.school.jobby.model.Sexo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,5 +17,10 @@ public interface CadastroRepository extends JpaRepository<Cadastro, Integer> {
 
 
     public Optional<Cadastro> findByNomeContainingIgnoreCase(String cadastro);
+
+    @Query("SELECT COUNT(c) FROM Cadastro c  WHERE :stringPesquisada MEMBER OF c.habilidades")
+    Integer totalPorNomeHabilidade(@Param("stringPesquisada") String stringPesquisada);
+
+
 
 }
