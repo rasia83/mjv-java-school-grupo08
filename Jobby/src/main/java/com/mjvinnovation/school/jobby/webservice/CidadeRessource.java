@@ -25,7 +25,7 @@ public class CidadeRessource {
         return service.BuscarPorNomeUf(cidade, uf);
     }
 
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     public Optional<Cidade> buscarPorId(@PathVariable("id") Integer id){
         return service.BuscarPorId(id);
     }
