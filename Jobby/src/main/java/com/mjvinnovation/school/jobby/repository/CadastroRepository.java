@@ -79,6 +79,11 @@ public interface CadastroRepository extends JpaRepository<Cadastro, Integer> {
             "GROUP BY p.nome")
     List<Object[]> contarProfissionaisPorProfissao();
 
+    @Query("SELECT c FROM Cadastro c " +
+            "JOIN c.profissao p " +
+            "ORDER BY p.nome, c.pretencaoSalarial.valorMaximo DESC")
+    List<Cadastro> retornarCandidatosOrdenadosPorProfissaoESalario();
+    // TODO revisar -- Criar uma consulta que retorne os candidatos ordenados por profissão e salário máximo de forma decrescente
 
 
 }
