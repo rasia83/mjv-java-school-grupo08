@@ -56,7 +56,7 @@ public class CommandStarter implements CommandLineRunner {
 
         List<Cadastro> cadastros = cadastroRepository.findBySexoAndUf(Sexo.FEMININO, "SP");
         for (Cadastro c:cadastros) {
-            System.out.println(c.getNome());
+//            System.out.println(c.getNome());
         }
 
     }
@@ -64,31 +64,31 @@ public class CommandStarter implements CommandLineRunner {
     private Cadastro preencherCadastro(){
         Cadastro cadastro = new Cadastro();
 
-        cadastro.setNome("João da Silva Template");
-        cadastro.setCpf("01234567890");
-        cadastro.setDataNascimento(LocalDate.of(1983,3,19));
-        cadastro.setEmail("jstemplate@gmail.com");
-
-        Endereco endereco = new Endereco();
-        endereco.setLogradouro("Rua de Teste");
-        endereco.setNumero("123B");
-        endereco.setComplemento("fundos");
-        endereco.setBairro("centro");
-        endereco.setCep(13800000L);
-        // Cidade cidade = cidadeRepository.findById(3550308).get(); // São Pualo SP
-        Cidade cidade = cidadeRepository.findByUfAndNomeMunicipio("SP", "São Paulo");
-        endereco.setCidade(cidade);
-        cadastro.setEndereco(endereco);
-
-        Celular celular = new Celular();
-        celular.setNumero(19998761234L);
-        celular.setWhatsapp(true);
-        cadastro.setCelular(celular);
-
-        PretencaoSalarial pretencaoSalarial = new PretencaoSalarial();
-        pretencaoSalarial.setValorMinimo(1320.0);
-        pretencaoSalarial.setValorMaximo(3500.0);
-        cadastro.setPretencaoSalarial(pretencaoSalarial);
+//        cadastro.setNome("João da Silva Template");
+//        cadastro.setCpf("01234567890");
+//        cadastro.setDataNascimento(LocalDate.of(1983,3,19));
+//        cadastro.setEmail("jstemplate@gmail.com");
+//
+//        Endereco endereco = new Endereco();
+//        endereco.setLogradouro("Rua de Teste");
+//        endereco.setNumero("123B");
+//        endereco.setComplemento("fundos");
+//        endereco.setBairro("centro");
+//        endereco.setCep(13800000L);
+//        // Cidade cidade = cidadeRepository.findById(3550308).get(); // São Pualo SP
+//        Cidade cidade = cidadeRepository.findByUfAndNomeMunicipio("SP", "São Paulo");
+//        endereco.setCidade(cidade);
+//        cadastro.setEndereco(endereco);
+//
+//        Celular celular = new Celular();
+//        celular.setNumero(19998761234L);
+//        celular.setWhatsapp(true);
+//        cadastro.setCelular(celular);
+//
+//        PretencaoSalarial pretencaoSalarial = new PretencaoSalarial();
+//        pretencaoSalarial.setValorMinimo(1320.0);
+//        pretencaoSalarial.setValorMaximo(3500.0);
+//        cadastro.setPretencaoSalarial(pretencaoSalarial);
 
         List<String> habilidades = new ArrayList<>();
         habilidades.add("Java");
@@ -104,12 +104,12 @@ public class CommandStarter implements CommandLineRunner {
         habilidades.add("Version Control Systems (e.g., Git)");
         habilidades.add("IDEs (Integrated Development Environments) like Eclipse or IntelliJ IDEA");
         habilidades.add("Application servers like Apache Tomcat");
-        cadastro.setHabilidades(habilidades);
-
-        cadastro.setSexo(Sexo.MASCULINO);
-
-        Profissao profissao = profissaoRepository.findByNome("Analista de Sistemas");
-        cadastro.setProfissao(profissao);
+//        cadastro.setHabilidades(habilidades);
+//
+//        cadastro.setSexo(Sexo.MASCULINO);
+//
+//        Profissao profissao = profissaoRepository.findByNome("Analista de Sistemas");
+//        cadastro.setProfissao(profissao);
 
         return cadastro;
     }
@@ -118,19 +118,19 @@ public class CommandStarter implements CommandLineRunner {
 
         // Set<CadastroExperiencia> cadastroExperiencias = new HashSet<>();
         CadastroExperiencia cadastroExperiencia = new CadastroExperiencia();
-        cadastroExperiencia.setSalario(2500.0);
-        cadastroExperiencia.setEmpregoAtual(false);
-        cadastroExperiencia.setDataContratacao(LocalDate.now().minusYears(3));
-        cadastroExperiencia.setDataDesligamento(LocalDate.now().minusMonths(3));
-        cadastroExperiencia.setRegimeContratacao(RegimeContratacao.CLT);
+//        cadastroExperiencia.setSalario(2500.0);
+//        cadastroExperiencia.setEmpregoAtual(false);
+//        cadastroExperiencia.setDataContratacao(LocalDate.now().minusYears(3));
+//        cadastroExperiencia.setDataDesligamento(LocalDate.now().minusMonths(3));
+//        cadastroExperiencia.setRegimeContratacao(RegimeContratacao.CLT);
 
         Empresa empresa = empresaRepository.findByNomeIgnoreCase("MJV technology & innovation");
-        cadastroExperiencia.setEmpresa(empresa);
+//        cadastroExperiencia.setEmpresa(empresa);
         // private Empresa empresa;
 
         Profissao profissao = profissaoRepository.findByNome("Analista de Testes");
-        cadastroExperiencia.setProfissao(profissao);
-        cadastroExperiencia.setCadastro(cadastro);
+//        cadastroExperiencia.setProfissao(profissao);
+//        cadastroExperiencia.setCadastro(cadastro);
         // cadastroExperiencias.add(cadastroExperiencia);
         //cadastro.setCadastroExperiencias(cadastroExperiencias);
 

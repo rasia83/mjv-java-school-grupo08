@@ -13,11 +13,17 @@ public class CadastroService {
     @Autowired
     CadastroRepository cadastroRepository;
 
-    public Optional<Cadastro> cadastrar(Cadastro cadastro) {
-        if (this.cadastroRepository.findByNomeContainingIgnoreCase(cadastro.getNome()).isPresent())
-            return Optional.empty();
-        else
-            return Optional.of(cadastroRepository.save(cadastro));
+    public Optional<Cadastro> cadastrar(Cadastro a) {
+        try {
+            cadastroRepository.save(a);
+            return Optional.of(a);
+        } catch (Exception e){
+            return null;
+        }
+//        if (this.cadastroRepository.findByNomeContainingIgnoreCase(cadastro.getNome()).isPresent())
+//            return Optional.empty();
+//        else
+//            return Optional.of(cadastroRepository.save(cadastro));
     }
 
     public int buscarPorHabilidade(List<Integer> habilidade){
