@@ -58,6 +58,15 @@ public interface CadastroRepository extends JpaRepository<Cadastro, Integer> {
             "WHERE e.nome = :nomeEmpresa AND ce.empregoAtual = true")
     List<Cadastro> selecionarCandidatosAtuaisPorEmpresa(@Param("nomeEmpresa") String nomeEmpresa);
 
+    @Query("SELECT c FROM Cadastro c " +
+            "JOIN CadastroExperiencia ce ON c.id = ce.cadastro.id " +
+            "WHERE ce.empregoAtual = :empregoAtualParam")
+    List<Cadastro> selecionarCandidatosPorStatusEmprego(@Param("empregoAtualParam") boolean empregoAtual);
+
+    @Query("SELECT c.nome, p.nome AS profissao FROM Cadastro c " +
+            "JOIN c.profissao p")
+    List<Object[]> retornarCandidatosComProfissao();
+    // retorna uma lista contendo, obj[0] o nome do cadastro e obj[1] nome da profissão
 
 
 
