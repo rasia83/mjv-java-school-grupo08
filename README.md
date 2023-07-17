@@ -54,5 +54,5 @@ ______________________________ ![3 logoJobby](https://github.com/rasia83/mjv-jav
 | João Victor          |
 | Julia Katharine      | 
 | Tiago Deoldoto       |
-| Tigo Rasia           |
+| Tiago Rasia          |
 | William Lisboa       | 
