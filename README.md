@@ -1,8 +1,8 @@
-<h1 align="center"> Jobyy - Plataforma de Recrutamento e Seleção</h1>
+<h1 align="center"> Jobby - Plataforma de Recrutamento e Seleção</h1>
 
 ______________________________ ![3 logoJobby](https://github.com/rasia83/mjv-java-school-grupo08/assets/103087481/ec824017-77c9-4eea-974a-38dedbde66c3) ______________________________
 
-<p align="center">Jobyy é uma plataforma desenvolvida para armazenar dados pessoais e
+<p align="center">Jobby é uma plataforma desenvolvida para armazenar dados pessoais e
  profissionais, bem como listar informações de profissionais, experiências e habilidades para auxiliar no processo de recrutamento e seleção em empresas de tecnologia.</p>
 
 <h3>Tecnologias Utilizadas</h3>
