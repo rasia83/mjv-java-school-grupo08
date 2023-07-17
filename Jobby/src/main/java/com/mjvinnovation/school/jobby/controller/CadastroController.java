@@ -15,6 +15,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/jobby")
+@CrossOrigin(origins = "", allowedHeaders = "")
 public class CadastroController {
     @Autowired
     public CadastroService cadastroService;
@@ -47,16 +48,12 @@ public class CadastroController {
         }).orElse(ResponseEntity.status(HttpStatus.BAD_REQUEST).build());
     }
 
-    @GetMapping("/java")
-    public ResponseEntity<Integer> getHabilidade() {
-        Integer totalHabilidade = cadastroRepository.totalPorNomeHabilidade("java");
+
+    @GetMapping("/habilidade/{habilidade}")
+    public ResponseEntity<Integer> getHabilidade(@PathVariable String habilidade) {
+        Integer totalHabilidade = cadastroRepository.totalPorNomeHabilidade(habilidade);
         return ResponseEntity.ok(totalHabilidade);
     }
 
-   /* @GetMapping("/habilidade/null")
-    public ResponseEntity<Integer> buscarZeroHabilidade(){
-        Integer totalSemHabilidade = cadastroRepository.totalSemHabilidade();
-        return ResponseEntity.ok(totalSemHabilidade);
-    }*/
 
 }
