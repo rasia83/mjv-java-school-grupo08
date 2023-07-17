@@ -46,6 +46,19 @@ public interface CadastroRepository extends JpaRepository<Cadastro, Integer> {
             "WHERE ce.dataContratacao BETWEEN :dataInicio AND :dataFim")
     List<Cadastro> selecionarCandidatosPorIntervaloDeDatas(@Param("dataInicio") LocalDate dataInicio, @Param("dataFim") LocalDate dataFim);
 
+    @Query("SELECT c FROM Cadastro c " +
+            "JOIN CadastroExperiencia ce ON c.id = ce.cadastro.id " +
+            "JOIN ce.empresa e " +
+            "WHERE e.nome = :nomeEmpresa")
+    List<Cadastro> selecionarCandidatosPorEmpresa(@Param("nomeEmpresa") String nomeEmpresa);
+
+    @Query("SELECT c FROM Cadastro c " +
+            "JOIN CadastroExperiencia ce ON c.id = ce.cadastro.id " +
+            "JOIN ce.empresa e " +
+            "WHERE e.nome = :nomeEmpresa AND ce.empregoAtual = true")
+    List<Cadastro> selecionarCandidatosAtuaisPorEmpresa(@Param("nomeEmpresa") String nomeEmpresa);
+
+
 
 
 
