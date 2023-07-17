@@ -44,15 +44,20 @@ public class CommandStarter implements CommandLineRunner {
             System.out.println(c.getNomeMunicipio());
         }*/
 
-        Cadastro cadastro = preencherCadastro();
+        //Cadastro cadastro = preencherCadastro();
 
-        cadastroRepository.save(cadastro);
+        //cadastroRepository.save(cadastro);
 
-        CadastroExperiencia cadastroExperiencia = preencherCadastroExperiencia(cadastro);
+        //CadastroExperiencia cadastroExperiencia = preencherCadastroExperiencia(cadastro);
 
-        cadastroExperienciaRepository.save(cadastroExperiencia);
+        //cadastroExperienciaRepository.save(cadastroExperiencia);
 
         //cadastroRepository.deleteById(2);
+
+        List<Cadastro> cadastros = cadastroRepository.findBySexoAndUf(Sexo.FEMININO, "SP");
+        for (Cadastro c:cadastros) {
+            System.out.println(c.getNome());
+        }
 
     }
 
