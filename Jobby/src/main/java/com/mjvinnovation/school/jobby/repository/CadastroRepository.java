@@ -68,6 +68,16 @@ public interface CadastroRepository extends JpaRepository<Cadastro, Integer> {
     List<Object[]> retornarCandidatosComProfissao();
     // retorna uma lista contendo, obj[0] o nome do cadastro e obj[1] nome da profissão
 
+    @Query("SELECT c.nome, p.nome AS profissao FROM Cadastro c " +
+            "JOIN c.profissao p " +
+            "WHERE p.nome = :nomeProfissao")
+    List<Object[]> retornarCandidatosComProfissaoPorNome(@Param("nomeProfissao") String nomeProfissao);
+
+    @Query("SELECT p.nome AS profissao, COUNT(*) AS quantidadeProfissionais " +
+            "FROM Cadastro c " +
+            "JOIN c.profissao p " +
+            "GROUP BY p.nome")
+    List<Object[]> contarProfissionaisPorProfissao();
 
 
 
