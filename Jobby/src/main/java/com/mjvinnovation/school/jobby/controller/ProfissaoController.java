@@ -1,4 +1,4 @@
-package com.mjvinnovation.school.jobby.webservice;
+package com.mjvinnovation.school.jobby.controller;
 
 import com.mjvinnovation.school.jobby.model.Profissao;
 import com.mjvinnovation.school.jobby.service.ProfissaoService;
@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/profissoes")
-public class ProfissaoRessource {
+public class ProfissaoController {
 
     @Autowired
     private ProfissaoService service;

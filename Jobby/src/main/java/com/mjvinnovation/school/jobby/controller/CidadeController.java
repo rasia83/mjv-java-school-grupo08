@@ -1,4 +1,4 @@
-package com.mjvinnovation.school.jobby.webservice;
+package com.mjvinnovation.school.jobby.controller;
 
 import com.mjvinnovation.school.jobby.model.Cidade;
 import com.mjvinnovation.school.jobby.service.CidadeService;
@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/cidades")
-public class CidadeRessource {
+public class CidadeController {
     @Autowired
     public CidadeService service;
 
