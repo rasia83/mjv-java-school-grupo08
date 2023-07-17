@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,6 +41,10 @@ public interface CadastroRepository extends JpaRepository<Cadastro, Integer> {
             System.out.println(o[0] + " - " + o[1]);
         }
      */
+
+    @Query("SELECT ce.cadastro FROM CadastroExperiencia ce " +
+            "WHERE ce.dataContratacao BETWEEN :dataInicio AND :dataFim")
+    List<Cadastro> selecionarCandidatosPorIntervaloDeDatas(@Param("dataInicio") LocalDate dataInicio, @Param("dataFim") LocalDate dataFim);
 
 
 
