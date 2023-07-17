@@ -27,7 +27,7 @@ public class Endereco {
     @Column(length = 20)
     private String bairro;
 
-    @ManyToOne() // cascade = NONE - Não faz nada com o objeto (padrão)
+    @ManyToOne(cascade = CascadeType.PERSIST) // cascade = NONE - Não faz nada com o objeto (padrão)
     @JoinColumn(name = "codigo_municipio")
     private Cidade cidade;
 

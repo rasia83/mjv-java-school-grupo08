@@ -30,7 +30,7 @@ public class CidadeController {
         return service.BuscarPorId(id);
     }
 
-    @PostMapping
+    @PostMapping("/inserir")
     public void Inserir(@RequestBody Cidade request){
         service.inserir(request);
     }

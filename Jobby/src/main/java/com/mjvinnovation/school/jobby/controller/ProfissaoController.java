@@ -15,12 +15,12 @@ public class ProfissaoController {
     private ProfissaoService service;
 
 
-    @GetMapping("/All")
+    @GetMapping("/all")
     public List<Profissao> getAll(){
         return service.listarTodas();
     }
 
-    @PostMapping
+    @PostMapping("/inserir")
     public void post(@RequestBody Profissao request){
 
         service.salvar(request);
