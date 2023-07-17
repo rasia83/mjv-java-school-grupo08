@@ -21,6 +21,9 @@ public interface CadastroRepository extends JpaRepository<Cadastro, Integer> {
     @Query("SELECT COUNT(c) FROM Cadastro c  WHERE :stringPesquisada MEMBER OF c.habilidades")
     Integer totalPorNomeHabilidade(@Param("stringPesquisada") String stringPesquisada);
 
-    /*@Query("SELECT c.* FROM cadastros c LEFT JOIN cadastro_habilidades ch ON c.id = ch.cadastro_id WHERE ch.cadastro_id IS NULL;")
-    Integer totalSemHabilidade();*/
+
+    @Query("SELECT c FROM Cadastro c LEFT JOIN c.habilidades h WHERE h IS NULL")
+    List<Cadastro> encontrarCandidatosSemHabilidadesCadastradas();
+
+
 }
